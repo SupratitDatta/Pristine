@@ -1,0 +1,139 @@
+@import "./responsive.scss";
+
+.hero {
+    display: flex;
+    height: 86vh;
+    overflow: hidden;
+
+    @include sm {
+        margin-top: 5vh;
+        height: auto;
+        text-align: center;
+        flex-direction: column-reverse;
+    }
+
+    .textContainer {
+        flex: 3;
+        z-index: 1;
+
+        .wrapper {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            height: 80%;
+
+            @include sm {
+                height: auto;
+            }
+
+            h1 {
+                font-size: 64px;
+                font-family: "Sail", system-ui;
+                color: #242e39;
+
+                @include lg {
+                    font-size: 3.5rem;
+                }
+            }
+
+            p {
+                text-align: justify;
+                font-family: "Croissant One", serif;
+                color: #555555;
+            }
+
+            @include lg {
+                padding-right: 50px;
+            }
+
+            @include md {
+                padding: 0;
+                gap: 3rem;
+            }
+
+            @include sm {
+                justify-content: flex-start;
+                gap: 1.5rem;
+            }
+
+            .title {
+                font-size: 64px;
+
+                @include lg {
+                    font-size: 3.5rem;
+                    font-weight: 300;
+                }
+            }
+
+            .boxes {
+                display: flex;
+                justify-content: space-between;
+                text-align: center;
+
+                @include sm {
+                    margin-top: 18vh;
+                }
+
+                h1 {
+                    font-size: 36px;
+
+                    @include lg {
+                        font-size: 32px;
+                    }
+                }
+
+                h2 {
+                    font-size: 20px;
+                    font-weight: 300;
+                }
+            }
+        }
+    }
+
+    .imgContainer {
+        flex: 2;
+        background-color: #EFF3F8;
+        position: relative;
+        display: flex;
+        align-items: center;
+
+        @include sm {
+            flex: 1;
+            height: 40vw;
+            width: auto;
+            display: inline;
+        }
+
+        img {
+            width: 115%;
+            position: absolute;
+            right: 0;
+
+            @include lg {
+                width: 115%;
+                z-index: 0;
+            }
+
+            @include sm {
+                position: relative;
+                width: 100%;
+            }
+        }
+    }
+
+    .img-2 {
+        display: inline;
+
+        @include sm {
+            display: none;
+        }
+    }
+
+    .img-1 {
+        display: none;
+
+        @include sm {
+            display: inline;
+        }
+    }
+}

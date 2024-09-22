@@ -1,0 +1,148 @@
+@import "./responsive.scss";
+
+.profilePage {
+    display: flex;
+    height: 100%;
+
+    @include md {
+        flex-direction: column;
+        overflow: scroll;
+    }
+
+    @include sm {
+        &::-webkit-scrollbar {
+            display: none;
+        }
+
+        padding-top: 5vh;
+    }
+
+    .details {
+        flex: 3;
+        overflow-y: scroll;
+        padding-bottom: 50px;
+
+        @include md {
+            flex: none;
+            height: max-content;
+        }
+
+        @include sm {
+            &::-webkit-scrollbar {
+                display: none;
+            }
+        }
+
+        .wrapper {
+            padding-right: 50px;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+
+            @include md {
+
+                padding-right: 0px;
+            }
+
+            .title {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                h1 {
+                    font-weight: 600;
+                    font-size: 2rem;
+
+                    @include md {
+                        text-wrap: nowrap;
+                    }
+                }
+
+                button {
+                    padding: 12px 24px;
+                    background-color: #fece51;
+                    cursor: pointer;
+                    border: none;
+
+                    @include md {
+                        padding: 10px;
+                        border-radius: 5px;
+                    }
+                }
+            }
+
+            .info {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+
+                span {
+                    display: flex;
+                    align-items: center;
+                    gap: 20px;
+
+                    b {
+                        cursor: pointer;
+                    }
+
+                    .username {
+                        color: teal;
+                        font-size: 35px;
+
+                        @include md {
+                            font-size: 25px;
+                        }
+                    }
+
+                    .email {
+                        @include md {
+                            display: none;
+                        }
+                    }
+                }
+
+                button {
+                    width: 100px;
+                    background-color: teal;
+                    border: none;
+                    color: white;
+                    padding: 10px 20px;
+                    cursor: pointer;
+                    border-radius: 5px;
+                    transition: all 0.2s ease;
+
+                    &:active {
+                        transform: scale(0.95);
+                    }
+                }
+
+                img {
+                    height: 5rem;
+                    width: 5rem;
+                    border-radius: 50%;
+                    object-fit: cover;
+
+                    @include md {
+                        height: 3rem;
+                        width: 3rem;
+                    }
+                }
+            }
+        }
+    }
+
+    .mapContainer {
+        flex: 2;
+        height: 100%;
+
+        @include md {
+            flex: none;
+            height: max-content;
+        }
+
+        .wrapper {
+            padding: 0px 20px;
+            height: 100%;
+        }
+    }
+}

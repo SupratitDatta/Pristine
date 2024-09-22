@@ -1,0 +1,197 @@
+@import "./responsive.scss";
+
+.services {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 8vw;
+    padding: 0 4%;
+    height: 100vh;
+    padding-top: 15vh;
+
+    @include sm {
+        display: flex;
+        flex-direction: column-reverse;
+        height: auto;
+        padding: 0%;
+        padding-top: 10vh;
+
+    }
+
+    .service-slider {
+        display: flex;
+        align-items: center;
+        width: 40vw;
+        margin-top: 10vh;
+
+        @include sm {
+            width: 100%;
+            margin-top: 10vh;
+        }
+
+        .slider-arrows {
+            button {
+                height: 4rem;
+                width: auto;
+                color: rgb(0, 0, 0);
+                background-color: #fece51;
+                padding: 5px 0px;
+                border: 2px solid black;
+                border-radius: 4px;
+                cursor: pointer;
+                transition: all 0.3s ease;
+
+                svg {
+                    height: 2rem;
+                    width: 2rem;
+                }
+
+                &:active {
+                    transform: scale(0.9);
+                }
+            }
+        }
+    }
+
+    .data {
+        grid-column: span 2;
+        width: 150%;
+        margin-top: 10vh;
+        margin-left: 4vw;
+
+        @include sm {
+            width: 100%;
+            margin-top: 0vh;
+            margin-left: 0vw;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 200;
+            text-align: right;
+            font-family: "Sail", system-ui;
+            color: #242e39;
+
+            @include sm {
+                text-align: center;
+            }
+        }
+
+        p {
+            margin-top: 10vh;
+            font-size: 1.2rem;
+            line-height: 1.1;
+            text-align: justify;
+            font-family: "Croissant One", serif;
+            color: #707979;
+
+            @include sm {
+                width: 95%;
+                margin: 5vh auto 0vh auto;
+            }
+        }
+
+        .icons {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            margin-top: 8vh;
+
+            @include sm {
+                margin-top: 4vh;
+                justify-content: space-evenly;
+            }
+
+            svg {
+                height: 2rem;
+                width: 2rem;
+                cursor: pointer;
+                transition: all 0.3s ease;
+
+                &:hover {
+                    transform: scale(1.2);
+                    color: #2e6df6;
+                }
+            }
+        }
+    }
+}
+
+.b-game-card {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 80vh;
+    overflow: hidden;
+    perspective: 2000px;
+    cursor: pointer;
+    border-radius: 5px;
+
+    @include sm {
+        height: 50vh;
+    }
+
+    &__cover {
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: center;
+        perspective-origin: 50% 50%;
+        transform-style: preserve-3d;
+        transform-origin: top center;
+        will-change: transform;
+        transform: skewX(0.001deg);
+        transition: transform 0.35s ease-in-out;
+
+        &::after {
+            display: block;
+            content: '';
+            position: absolute;
+            z-index: 100;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 120%;
+            background: linear-gradient(226deg,
+                    rgba(255, 255, 255, 0.4) 0%,
+                    rgba(255, 255, 255, 0.4) 35%,
+                    rgba(255, 255, 255, 0.2) 42%,
+                    rgba(255, 255, 255, 0) 60%);
+            transform: translateY(-20%);
+            will-change: transform;
+            transition: transform 0.65s cubic-bezier(0.18, 0.9, 0.58, 1);
+        }
+    }
+
+    &:hover &__cover {
+        transform: rotateX(7deg) translateY(-6px);
+
+        &::after {
+            transform: translateY(0%);
+        }
+    }
+
+    &::before {
+        display: block;
+        content: '';
+        position: absolute;
+        top: 5%;
+        left: 5%;
+        width: 90%;
+        height: 90%;
+        background: rgba(128, 128, 128, 0.5);
+        box-shadow: 0 6px 12px rgba(128, 128, 128, 0.4);
+        will-change: opacity;
+        transform-origin: top center;
+        transform: skewX(0.001deg);
+        transition: transform 0.35s ease-in-out, opacity 0.5s ease-in-out;
+    }
+
+    &:hover::before {
+        opacity: 0.6;
+        transform: rotateX(7deg) translateY(-6px) scale(1.05);
+    }
+}

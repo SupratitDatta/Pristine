@@ -1,0 +1,97 @@
+@import "./responsive.scss";
+
+.about-container {
+    height: 100vh;
+    display: flex;
+    justify-content: space-between;
+
+    @include sm {
+        flex-direction: column-reverse;
+        height: auto;
+        margin-top: 10vh;
+        height: auto;
+    }
+
+    .left {
+        width: 50vw;
+
+        @include sm {
+            width: 100%;
+            margin: auto;
+        }
+
+        .about-header {
+            margin-top: 15vh;
+            margin-left: 2rem;
+
+            @include sm {
+                margin-left: 0rem;
+                margin-top: 4vh;
+                text-align: center;
+            }
+
+            h1 {
+                font-size: 4rem;
+                font-weight: 200;
+                color: #242e39;
+                font-family: "Sail", system-ui;
+
+                @include sm {
+                    font-size: 3.5rem;
+                }
+            }
+
+            p {
+                margin-top: 6vh;
+                font-size: 20px;
+                color: #707979;
+                max-width: 35rem;
+                font-family: "Croissant One", serif;
+
+                @include sm {
+                    text-align: justify;
+                }
+            }
+
+            button {
+                font-size: 1.2rem;
+                font-weight: 600;
+                margin-top: 5vh;
+                padding: 0.7rem 2rem;
+                border: 2px solid #fece51;
+                background-color: #fece51;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                @include sm {
+                    margin-top: 3vh;
+                }
+                &:hover {
+                    transform: translateX(4px);
+                }
+
+                &:active {
+                    transform: scale(0.95);
+                }
+            }
+        }
+    }
+
+    .right {
+        width: auto;
+
+        img {
+            height: 96vh;
+            margin-top: 4vh;
+            margin-bottom: -1vh;
+            width: auto;
+
+            @include sm {
+                height: 35vh;
+                margin: auto;
+                display: flex;
+                justify-content: center;
+                border-radius: 5px;
+            }
+        }
+    }
+}

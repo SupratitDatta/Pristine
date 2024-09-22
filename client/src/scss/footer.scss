@@ -1,0 +1,220 @@
+@import "./responsive.scss";
+
+.site-footer {
+    background-color: #26272b;
+    font-size: 15px;
+    line-height: 24px;
+    width: 101vw;
+    margin-left: -4%;
+    color: #a0a0a0;
+    padding: 1rem 3rem 0.4rem 3rem;
+    margin-top: 30vh;
+
+    @include sm {
+        padding: 2rem;
+        margin-left: -4%;
+        width: 101vw;
+        overflow-x: hidden;
+    }
+
+    hr {
+        border-top-color: #bbb;
+        opacity: 0.5;
+        margin: 2vh 0vh;
+
+        @include sm {
+            margin: 0px 0px 20px -12vw;
+            width: 104vw;
+        }
+    }
+
+    h6 {
+        color: #fff;
+        font-size: 1.2rem;
+        text-align: center;
+        text-transform: uppercase;
+        margin-top: 5px;
+        letter-spacing: 2px;
+        margin-bottom: 4vh;
+
+        @include sm {
+            margin-bottom: 1vh;
+            font-size: 1.5rem;
+        }
+    }
+
+    a {
+        color: #a0a0a0;
+        text-align: center;
+
+        &:hover {
+            color: #3366cc;
+            text-decoration: none;
+        }
+
+        @include sm {
+            font-size: 1.1rem;
+        }
+    }
+
+    .footer-links {
+        padding-left: 0;
+        list-style: none;
+
+        li {
+            display: block;
+            text-align: center;
+
+            a {
+                text-align: center;
+                color: #a0a0a0;
+
+                &:active,
+                &:focus,
+                &:hover {
+                    color: #3366cc;
+                    text-decoration: none;
+                }
+            }
+        }
+
+        &.inline {
+            li {
+                display: inline-block;
+            }
+        }
+    }
+
+    .social-icons {
+        text-align: right;
+        padding-left: 0;
+        list-style: none;
+
+        @include sm {
+            text-align: center;
+            margin-top: 3vh;
+        }
+
+        img {
+            height: 2rem;
+            width: 2rem;
+            opacity: 0.4;
+            transition: all 0.1s linear;
+
+            &:hover {
+                opacity: 0.8;
+            }
+
+            &:active {
+                transform: scale(0.9);
+                opacity: 1;
+            }
+        }
+
+        li {
+            display: inline-block;
+            margin-bottom: 4px;
+
+            &.title {
+                margin-right: 15px;
+                text-transform: uppercase;
+                color: lighten(#a0a0a0, 20%);
+                font-weight: 700;
+                font-size: 13px;
+
+                @include sm {
+                    display: block;
+                    margin-right: 0;
+                    font-weight: 600;
+                }
+            }
+        }
+
+        a {
+            color: lighten(#a0a0a0, 20%);
+            font-size: 16px;
+            display: inline-block;
+            line-height: 44px;
+            width: 2rem;
+            height: 2rem;
+            text-align: center;
+            margin-right: 8px;
+            border-radius: 100%;
+            transition: all 0.2s linear;
+
+            &.size-sm {
+                line-height: 34px;
+                height: 34px;
+                width: 34px;
+                font-size: 14px;
+            }
+        }
+    }
+
+    .copyright-text {
+        margin: 0;
+
+        @include sm {
+            text-align: center;
+        }
+    }
+
+    .row {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        @include sm {
+            flex-direction: column;
+        }
+
+        .about {
+            width: 40%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: justify;
+            border-right: 1px solid #bbb;
+            padding-right: 3vw;
+            margin-right: -3vw;
+
+            @include sm {
+                width: 100%;
+                padding-right: 0vw;
+                margin-right: 0vw;
+                border-right: none;
+                border-bottom: 1px solid #bbb;
+                margin-bottom: 2vh;
+                padding-bottom: 2vh;
+                font-size: 1.1rem;
+                line-height: 1.2rem;
+            }
+
+            .brand {
+                display: flex;
+                flex-direction: row;
+                margin-bottom: 2vh;
+
+                img {
+                    height: 70px;
+                    width: 70px;
+                    color: white;
+                    border-radius: 0.6rem;
+                    margin-right: 2rem;
+                }
+
+                .brand-name {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-evenly;
+                    align-items: center;
+                    color: #cbcbcb;
+
+                    @include sm {
+                        font-size: 1.2rem;
+                    }
+                }
+            }
+        }
+    }
+}
